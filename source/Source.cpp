@@ -482,12 +482,13 @@ map<string, GameItem*>::iterator ItemDatabase::findItem() {
 	if (it != database.end())
 		return it;
 	else
-		throw invalid_argument("Item not found");
+		throw invalid_argument("--Item not found!--");
 }
 
 void ItemDatabase::remItem(map<string, GameItem*>::iterator it) {
+	delete it->second;
 	database.erase(it);
-	cout << "Item deleted!" << endl;
+	cout << "--Item deleted!--" << endl;
 }
 /*
  * Source.cpp
